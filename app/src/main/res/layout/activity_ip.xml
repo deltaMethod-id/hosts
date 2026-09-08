@@ -1,7 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="@dimen/screen_padding" android:background="@color/screen_background">
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Alamat IP" android:textSize="24sp" android:textStyle="bold" android:textColor="@color/blue_primary" />
-	<EditText android:id="@+id/ip_value" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:hint="192.168.1.10" android:inputType="text" />
-	<Button android:id="@+id/ip_save" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Simpan" android:textAllCaps="false" />
-</LinearLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/screen_background">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="@dimen/screen_padding">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Konfigurasi IP"
+			android:textSize="24sp"
+			android:textStyle="bold"
+			android:textColor="@color/blue_primary" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:text="Alamat IP Lokal"
+			android:textColor="@color/text_secondary"
+			android:textSize="14sp" />
+
+		<EditText
+			android:id="@+id/ip_value"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:inputType="text"
+			android:hint="192.168.1.10" />
+
+		<Button
+			android:id="@+id/ip_save"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
+			android:text="Simpan IP"
+			android:textAllCaps="false" />
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			android:text="Gunakan format IP standar: xxx.xxx.xxx.xxx (contoh: 192.168.1.10)"
+			android:textColor="@color/text_secondary"
+			android:textSize="13sp" />
+	</LinearLayout>
+</ScrollView>
 

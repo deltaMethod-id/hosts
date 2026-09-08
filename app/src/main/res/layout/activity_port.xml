@@ -12,7 +12,7 @@
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="Konfigurasi DNS"
+			android:text="Konfigurasi Port"
 			android:textSize="24sp"
 			android:textStyle="bold"
 			android:textColor="@color/blue_primary" />
@@ -21,40 +21,33 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="16dp"
-			android:text="Nama Host DNS"
+			android:text="Port HTTP Server"
 			android:textColor="@color/text_secondary"
 			android:textSize="14sp" />
 
 		<EditText
-			android:id="@+id/dns_hostname"
+			android:id="@+id/port_input"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="8dp"
-			android:inputType="text"
-			android:hint="local.test" />
-
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="16dp"
-			android:text="Alamat IP"
-			android:textColor="@color/text_secondary"
-			android:textSize="14sp" />
-
-		<EditText
-			android:id="@+id/dns_address"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="8dp"
-			android:inputType="text"
-			android:hint="192.168.1.10" />
+			android:inputType="number"
+			android:maxLength="5"
+			android:text="8080" />
 
 		<Button
-			android:id="@+id/dns_save"
+			android:id="@+id/port_save"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="20dp"
-			android:text="Simpan DNS"
+			android:text="Simpan port"
 			android:textAllCaps="false" />
+
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			android:text="Port harus di antara 1024 dan 65535. Server akan berhenti saat konfigurasi diubah."
+			android:textColor="@color/text_secondary"
+			android:textSize="13sp" />
 	</LinearLayout>
 </ScrollView>

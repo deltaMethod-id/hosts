@@ -15,13 +15,19 @@ public final class localServer {
 	}
 
 	private final int port;
+	private final String title;
 	private final Listener listener;
 	private volatile boolean running;
 	private ServerSocket serverSocket;
 	private Thread serverThread;
 
 	public localServer(int port, Listener listener) {
+		this(port, "hosts", listener);
+	}
+
+	public localServer(int port, String title, Listener listener) {
 		this.port = port;
+		this.title = title == null || title.trim().isEmpty() ? "hosts" : title.trim();
 		this.listener = listener;
 	}
 
@@ -56,9 +62,9 @@ public final class localServer {
 			String header;
 			while ((header = reader.readLine()) != null && !header.isEmpty()) {
 			}
-			String body = "<html><head><title>hosts</title></head>"
+			String body = "<html><head><title>" + title + "</title></head>"
 					+ "<body style='font-family:sans-serif;padding:2rem'>"
-					+ "<h1>hosts</h1><p>Server lokal aktif.</p></body></html>";
+					+ "<h1>" + title + "</h1><p>Server lokal aktif.</p></body></html>";
 			byte[] bytes = body.getBytes(StandardCharsets.UTF_8);
 			String response = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\n"
 					+ "Content-Length: " + bytes.length + "\r\nConnection: close\r\n\r\n";

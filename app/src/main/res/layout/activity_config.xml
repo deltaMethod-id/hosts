@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/screen_background">
+	<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/screen_padding">
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Konfigurasi" android:textSize="24sp" android:textStyle="bold" android:textColor="@color/blue_primary" />
+		<EditText android:id="@+id/config_port" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:hint="Port HTTP" android:inputType="number" android:text="8080" />
+		<EditText android:id="@+id/config_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Judul halaman" android:text="hosts" />
+	</LinearLayout>
+</ScrollView>

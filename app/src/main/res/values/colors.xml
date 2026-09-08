@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="blue_primary">#0D47A1</color>
+	<color name="blue_accent">#1565C0</color>
+	<color name="screen_background">#F4F7FB</color>
+	<color name="panel_background">#FFFFFF</color>
+	<color name="text_primary">#263238</color>
+	<color name="text_secondary">#607D8B</color>
+</resources>

@@ -1,0 +1,2 @@
+-keep class org.hosts.connection.** { *; }
+-dontwarn org.hosts.connection.**

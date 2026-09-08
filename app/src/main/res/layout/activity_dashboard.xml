@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:orientation="vertical" android:padding="@dimen/screen_padding" android:background="@color/screen_background">
+	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dashboard" android:textSize="28sp" android:textStyle="bold" android:textColor="@color/blue_primary" />
+	<TextView android:id="@+id/dashboard_status" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:padding="@dimen/panel_padding" android:text="Server berhenti" android:textSize="18sp" android:textColor="@color/text_primary" android:background="@color/panel_background" />
+</LinearLayout>

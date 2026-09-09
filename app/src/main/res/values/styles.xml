@@ -10,6 +10,7 @@
 		<item name="android:statusBarColor">@color/blue_dark</item>
 		<item name="android:navigationBarColor">@color/screen_background</item>
 		<item name="android:windowLightStatusBar">false</item>
+		<item name="android:forceDark">true</item>
 	</style>
 
 	<style name="TextAppearance.Title" parent="TextAppearance.MaterialComponents.Headline6">

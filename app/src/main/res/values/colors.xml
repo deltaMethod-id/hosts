@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="blue_primary">#0D47A1</color>
-	<color name="blue_dark">#002171</color>
-	<color name="blue_accent">#1565C0</color>
-	<color name="screen_background">#F4F7FB</color>
-	<color name="panel_background">#FFFFFF</color>
-	<color name="text_primary">#263238</color>
-	<color name="text_secondary">#607D8B</color>
+	<color name="blue_primary">#90CAF9</color>
+	<color name="blue_dark">#0D47A1</color>
+	<color name="blue_accent">#42A5F5</color>
+	<color name="screen_background">#121212</color>
+	<color name="panel_background">#1E1E1E</color>
+	<color name="text_primary">#E1E1E1</color>
+	<color name="text_secondary">#B0BEC5</color>
 	<color name="white">#FFFFFF</color>
-	<color name="error">#B00020</color>
-	<color name="success">#2E7D32</color>
+	<color name="error">#CF6679</color>
+	<color name="success">#81C784</color>
 </resources>

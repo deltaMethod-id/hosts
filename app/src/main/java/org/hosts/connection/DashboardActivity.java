@@ -4,9 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.hosts.connection.server.localServer;
-import org.hosts.connection.tools.addPort;
+
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
 
 public class DashboardActivity extends BaseActivity {
 	private TextView statusText;

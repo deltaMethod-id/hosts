@@ -3,6 +3,11 @@ package org.hosts.connection;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
+
 public class AddressActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

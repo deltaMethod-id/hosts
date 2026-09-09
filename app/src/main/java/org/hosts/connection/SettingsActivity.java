@@ -2,6 +2,8 @@ package org.hosts.connection;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class SettingsActivity extends BaseActivity {
@@ -13,9 +15,17 @@ public class SettingsActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		prefs = new PreferencesManager(this);
 
-		findViewById(R.id.setting_dark_mode).setOnCheckedChangeListener((buttonView, isChecked) -> prefs.setDarkMode(isChecked));
-		findViewById(R.id.setting_auto_start).setOnCheckedChangeListener((buttonView, isChecked) -> prefs.setAutoStart(isChecked));
-		findViewById(R.id.setting_notification).setOnCheckedChangeListener((buttonView, isChecked) -> prefs.setNotificationEnabled(isChecked));
+		Switch darkModeSwitch = findViewById(R.id.setting_dark_mode);
+		Switch autoStartSwitch = findViewById(R.id.setting_auto_start);
+		Switch notificationSwitch = findViewById(R.id.setting_notification);
+
+		darkModeSwitch.setChecked(prefs.isDarkMode());
+		autoStartSwitch.setChecked(prefs.isAutoStart());
+		notificationSwitch.setChecked(prefs.isNotificationEnabled());
+
+		darkModeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> prefs.setDarkMode(isChecked));
+		autoStartSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> prefs.setAutoStart(isChecked));
+		notificationSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> prefs.setNotificationEnabled(isChecked));
 
 		resetButton = findViewById(R.id.setting_reset);
 		resetButton.setOnClickListener(v -> {

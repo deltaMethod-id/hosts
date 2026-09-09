@@ -122,7 +122,6 @@ public final class localServer {
 	public int getPort() {
 		return port;
 	}
-}
 
 	public List<String> getLogs() {
 		return new ArrayList<>(logs);

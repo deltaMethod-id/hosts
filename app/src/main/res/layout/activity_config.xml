@@ -1,8 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/screen_background">
-	<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="@dimen/screen_padding">
-		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Konfigurasi" android:textSize="24sp" android:textStyle="bold" android:textColor="@color/blue_primary" />
-		<EditText android:id="@+id/config_port" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:hint="Port HTTP" android:inputType="number" android:text="8080" />
-		<EditText android:id="@+id/config_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Judul halaman" android:text="hosts" />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/screen_background"
+	android:fillViewport="true">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="@dimen/screen_padding">
+
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:cardCornerRadius="@dimen/card_corner_radius"
+			app:cardElevation="@dimen/card_elevation">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="@dimen/panel_padding">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Konfigurasi"
+					android:textSize="24sp"
+					android:textStyle="bold"
+					android:textColor="@color/blue_primary" />
+
+				<com.google.android.material.textfield.TextInputLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+					<com.google.android.material.textfield.TextInputEditText
+						android:id="@+id/config_port"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="number"
+						android:text="8080"
+						android:hint="@string/config_port" />
+				</com.google.android.material.textfield.TextInputLayout>
+
+				<com.google.android.material.textfield.TextInputLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="12dp"
+					style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+					<com.google.android.material.textfield.TextInputEditText
+						android:id="@+id/config_title"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="hosts"
+						android:hint="@string/config_server_name" />
+				</com.google.android.material.textfield.TextInputLayout>
+
+				<Button
+					android:id="@+id/config_save"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="20dp"
+					android:text="Simpan"
+					android:textAllCaps="false" />
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
 	</LinearLayout>
 </ScrollView>

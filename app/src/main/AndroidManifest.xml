@@ -19,5 +19,17 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		<activity android:name=".DashboardActivity" android:exported="false" />
+		<activity android:name=".IpActivity" android:exported="false" />
+		<activity android:name=".DnsActivity" android:exported="false" />
+		<activity android:name=".RulesActivity" android:exported="false" />
+		<activity android:name=".PortActivity" android:exported="false" />
+		<activity android:name=".NamesActivity" android:exported="false" />
+		<activity android:name=".ConfigActivity" android:exported="false" />
+		<activity android:name=".LogsActivity" android:exported="false" />
+		<activity android:name=".SettingsActivity" android:exported="false" />
+		<activity android:name=".AboutActivity" android:exported="false" />
+		<activity android:name=".HelpActivity" android:exported="false" />
+		<activity android:name=".AddressActivity" android:exported="false" />
 	</application>
 </manifest>

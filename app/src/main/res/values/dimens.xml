@@ -3,4 +3,8 @@
 	<dimen name="screen_padding">24dp</dimen>
 	<dimen name="panel_padding">20dp</dimen>
 	<dimen name="section_gap">24dp</dimen>
+	<dimen name="card_corner_radius">12dp</dimen>
+	<dimen name="card_elevation">2dp</dimen>
+	<dimen name="fab_margin">16dp</dimen>
+	<dimen name="nav_header_height">160dp</dimen>
 </resources>

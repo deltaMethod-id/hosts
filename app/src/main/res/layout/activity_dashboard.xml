@@ -1,7 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent" android:layout_height="match_parent"
-	android:orientation="vertical" android:padding="@dimen/screen_padding" android:background="@color/screen_background">
-	<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dashboard" android:textSize="28sp" android:textStyle="bold" android:textColor="@color/blue_primary" />
-	<TextView android:id="@+id/dashboard_status" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:padding="@dimen/panel_padding" android:text="Server berhenti" android:textSize="18sp" android:textColor="@color/text_primary" android:background="@color/panel_background" />
-</LinearLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/screen_background">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="@dimen/screen_padding">
+
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:cardCornerRadius="@dimen/card_corner_radius"
+			app:cardElevation="@dimen/card_elevation">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="@dimen/panel_padding">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Dashboard"
+					android:textSize="28sp"
+					android:textStyle="bold"
+					android:textColor="@color/blue_primary" />
+
+			<TextView
+				android:id="@+id/dashboard_status"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="24dp"
+				android:padding="@dimen/panel_padding"
+				android:text="Server berhenti"
+				android:textSize="18sp"
+				android:textColor="@color/text_primary"
+				android:background="@color/panel_background" />
+
+				<com.google.android.material.textfield.TextInputLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="16dp"
+					style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+					<com.google.android.material.textfield.TextInputEditText
+						android:id="@+id/dashboard_port_value"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:inputType="number"
+						android:maxLength="5"
+						android:text="8080"
+						android:hint="@string/dashboard_port" />
+				</com.google.android.material.textfield.TextInputLayout>
+
+				<com.google.android.material.textfield.TextInputLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="12dp"
+					style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+					<com.google.android.material.textfield.TextInputEditText
+						android:id="@+id/dashboard_title_value"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="hosts"
+						android:hint="@string/dashboard_title_label" />
+				</com.google.android.material.textfield.TextInputLayout>
+
+				<TextView
+					android:id="@+id/dashboard_address"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="16dp"
+					android:text="Belum ada alamat"
+					android:textColor="@color/text_primary"
+					android:textIsSelectable="true"
+					android:textSize="15sp" />
+
+				<Button
+					android:id="@+id/dashboard_start_stop"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="16dp"
+					android:text="Mulai Server"
+					android:textAllCaps="false" />
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			android:text="Pintasan"
+			android:textSize="18sp"
+			android:textStyle="bold"
+			android:textColor="@color/text_primary" />
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_marginTop="12dp">
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/dashboard_config"
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="Konfigurasi"
+				android:textAllCaps="false"
+				android:layout_marginEnd="8dp" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/dashboard_ip"
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="IP"
+				android:textAllCaps="false"
+				android:layout_marginEnd="8dp" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/dashboard_dns"
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="DNS"
+				android:textAllCaps="false"
+				android:layout_marginEnd="8dp" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/dashboard_rules"
+				style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="Rules"
+				android:textAllCaps="false" />
+		</LinearLayout>
+	</LinearLayout>
+</ScrollView>

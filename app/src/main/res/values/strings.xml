@@ -5,4 +5,110 @@
 	<string name="server_stopped">Server berhenti</string>
 	<string name="server_start">Mulai server</string>
 	<string name="server_stop">Hentikan server</string>
+
+	<string name="drawer_dashboard">Dashboard</string>
+	<string name="drawer_server">Server</string>
+	<string name="drawer_ip">Konfigurasi IP</string>
+	<string name="drawer_dns">Konfigurasi DNS</string>
+	<string name="drawer_rules">Aturan Akses</string>
+	<string name="drawer_logs">Log Server</string>
+	<string name="drawer_settings">Pengaturan</string>
+	<string name="drawer_about">Tentang</string>
+	<string name="drawer_help">Bantuan</string>
+
+	<string name="menu_server">Server</string>
+	<string name="menu_configuration">Konfigurasi</string>
+	<string name="menu_ip">IP</string>
+	<string name="menu_dns">DNS</string>
+	<string name="menu_rules">Rules</string>
+	<string name="menu_names">Nama</string>
+	<string name="menu_ports">Port</string>
+	<string name="menu_address">Alamat</string>
+	<string name="menu_dashboard">Dashboard</string>
+	<string name="menu_logs">Log</string>
+	<string name="menu_settings">Pengaturan</string>
+	<string name="menu_about">Tentang</string>
+	<string name="menu_help">Bantuan</string>
+
+	<string name="dashboard_title">Dashboard</string>
+	<string name="dashboard_status_stopped">Server berhenti</string>
+	<string name="dashboard_status_running">Server aktif</string>
+	<string name="dashboard_start">Mulai Server</string>
+	<string name="dashboard_stop">Hentikan Server</string>
+	<string name="dashboard_port">Port</string>
+	<string name="dashboard_title_label">Judul</string>
+	<string name="dashboard_address">Alamat Akses</string>
+	<string name="dashboard_no_address">Belum ada alamat</string>
+
+	<string name="logs_title">Log Server</string>
+	<string name="logs_empty">Belum ada permintaan masuk</string>
+	<string name="logs_clear">Hapus Log</string>
+
+	<string name="settings_title">Pengaturan</string>
+	<string name="settings_dark_mode">Mode gelap</string>
+	<string name="settings_auto_start">Jalankan server saat buka aplikasi</string>
+	<string name="settings_notification">Notifikasi server</string>
+	<string name="settings_reset">Reset semua data</string>
+
+	<string name="about_title">Tentang</string>
+	<string name="about_app_name">Aplikasi Hosts</string>
+	<string name="about_version">Versi 1.0</string>
+	<string name="about_description">Server lokal sederhana untuk mengatur hosts di jaringan lokal.</string>
+
+	<string name="help_title">Bantuan</string>
+	<string name="help_usage">Cara Penggunaan</string>
+	<string name="help_step1">1. Buka halaman Konfigurasi IP dan masukkan alamat IP lokal.</string>
+	<string name="help_step2">2. Buka halaman Konfigurasi DNS untuk menambahkan hostname.</string>
+	<string name="help_step3">3. Tambahkan aturan akses di halaman Rules.</string>
+	<string name="help_step4">4. Tekan Mulai Server pada halaman Server.</string>
+	<string name="help_step5">5. Buka alamat yang ditampilkan dari perangkat lain.</string>
+
+	<string name="names_title">Nama Server</string>
+	<string name="names_hint">Masukkan nama server</string>
+	<string name="names_save">Simpan Nama</string>
+
+	<string name="port_title">Konfigurasi Port</string>
+	<string name="port_label">Port HTTP Server</string>
+	<string name="port_save">Simpan Port</string>
+	<string name="port_hint">8080</string>
+
+	<string name="ip_title">Konfigurasi IP</string>
+	<string name="ip_label">Alamat IP Lokal</string>
+	<string name="ip_save">Simpan IP</string>
+	<string name="ip_hint">192.168.1.10</string>
+
+	<string name="dns_title">Konfigurasi DNS</string>
+	<string name="dns_hostname">Nama Host DNS</string>
+	<string name="dns_address">Alamat IP</string>
+	<string name="dns_save">Simpan DNS</string>
+	<string name="dns_hint_host">local.test</string>
+	<string name="dns_hint_address">192.168.1.10</string>
+
+	<string name="rules_title">Aturan Akses</string>
+	<string name="rules_add_label">Tambah aturan host yang diizinkan</string>
+	<string name="rules_input_hint">contoh.com</string>
+	<string name="rules_add">Tambah</string>
+	<string name="rules_list_label">Daftar aturan (tekan lama untuk hapus)</string>
+	<string name="rules_deleted">Rule dihapus</string>
+	<string name="rules_added">Rule ditambahkan</string>
+	<string name="rules_required">Rule wajib diisi</string>
+
+	<string name="config_title">Konfigurasi</string>
+	<string name="config_port">Port HTTP</string>
+	<string name="config_server_name">Nama Server</string>
+
+	<string name="address_title">Alamat Server</string>
+	<string name="address_not_started">Server belum aktif</string>
+
+	<string name="server_title">Server Lokal</string>
+	<string name="server_info_ready">Siap dijalankan pada port %1$d</string>
+
+	<string name="toast_invalid_ip">Format IP tidak valid (gunakan xxx.xxx.xxx.xxx)</string>
+	<string name="toast_invalid_port">Port harus di antara 1024 dan 65535</string>
+	<string name="toast_saved">Tersimpan</string>
+	<string name="toast_title_required">Nama server wajib diisi</string>
+	<string name="toast_stop_first">Hentikan server sebelum mengubah konfigurasi</string>
+	<string name="toast_server_failed">Server gagal dijalankan</string>
+	<string name="drawer_open">Buka menu</string>
+	<string name="drawer_close">Tutup menu</string>
 </resources>

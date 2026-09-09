@@ -11,26 +11,21 @@ public class PreferencesManager {
 		preferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
 	}
 
-	// Port configuration
 	public int getPort() { return preferences.getInt("port", 8080); }
 	public void setPort(int port) { preferences.edit().putInt("port", port).apply(); }
 
-	// Server title
 	public String getTitle() { return preferences.getString("title", "hosts"); }
 	public void setTitle(String title) { preferences.edit().putString("title", title).apply(); }
 
-	// IP configuration
 	public String getIp() { return preferences.getString("ip", "192.168.1.10"); }
 	public void setIp(String ip) { preferences.edit().putString("ip", ip).apply(); }
 
-	// DNS configuration
 	public String getDnsHostname() { return preferences.getString("dns_hostname", "local.test"); }
 	public void setDnsHostname(String hostname) { preferences.edit().putString("dns_hostname", hostname).apply(); }
 
 	public String getDnsAddress() { return preferences.getString("dns_address", "192.168.1.10"); }
 	public void setDnsAddress(String address) { preferences.edit().putString("dns_address", address).apply(); }
 
-	// Rules configuration
 	public String getRule(int index) { return preferences.getString("rule_" + index, ""); }
 	public void setRule(int index, String rule) { preferences.edit().putString("rule_" + index, rule).apply(); }
 
@@ -51,6 +46,15 @@ public class PreferencesManager {
 		}
 		setRuleCount(count - 1);
 	}
+
+	public boolean isDarkMode() { return preferences.getBoolean("dark_mode", false); }
+	public void setDarkMode(boolean enabled) { preferences.edit().putBoolean("dark_mode", enabled).apply(); }
+
+	public boolean isAutoStart() { return preferences.getBoolean("auto_start", false); }
+	public void setAutoStart(boolean enabled) { preferences.edit().putBoolean("auto_start", enabled).apply(); }
+
+	public boolean isNotificationEnabled() { return preferences.getBoolean("notification", true); }
+	public void setNotificationEnabled(boolean enabled) { preferences.edit().putBoolean("notification", enabled).apply(); }
 
 	public void clearAll() { preferences.edit().clear().apply(); }
 }

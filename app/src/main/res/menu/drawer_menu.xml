@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<group android:checkableBehavior="single">
+		<item
+			android:id="@+id/nav_dashboard"
+			android:icon="@drawable/ic_dashboard"
+			android:title="@string/drawer_dashboard" />
+		<item
+			android:id="@+id/nav_server"
+			android:icon="@drawable/ic_server"
+			android:title="@string/drawer_server" />
+		<item
+			android:id="@+id/nav_ip"
+			android:icon="@drawable/ic_ip"
+			android:title="@string/drawer_ip" />
+		<item
+			android:id="@+id/nav_dns"
+			android:icon="@drawable/ic_dns"
+			android:title="@string/drawer_dns" />
+		<item
+			android:id="@+id/nav_rules"
+			android:icon="@drawable/ic_rules"
+			android:title="@string/drawer_rules" />
+		<item
+			android:id="@+id/nav_logs"
+			android:icon="@drawable/ic_logs"
+			android:title="@string/drawer_logs" />
+	</group>
+
+	<group android:checkableBehavior="none">
+		<item
+			android:id="@+id/nav_settings"
+			android:icon="@drawable/ic_settings"
+			android:title="@string/drawer_settings" />
+		<item
+			android:id="@+id/nav_about"
+			android:icon="@drawable/ic_about"
+			android:title="@string/drawer_about" />
+		<item
+			android:id="@+id/nav_help"
+			android:icon="@drawable/ic_help"
+			android:title="@string/drawer_help" />
+	</group>
+</menu>

@@ -6,50 +6,70 @@
 	android:padding="@dimen/screen_padding"
 	android:background="@color/screen_background">
 
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="Aturan Akses"
-		android:textSize="24sp"
-		android:textStyle="bold"
-		android:textColor="@color/blue_primary" />
-
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="16dp"
-		android:text="Tambah aturan host yang diizinkan"
-		android:textColor="@color/text_secondary"
-		android:textSize="14sp" />
-
-	<EditText
-		android:id="@+id/rule_input"
+	<com.google.android.material.card.MaterialCardView
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="12dp"
-		android:hint="contoh.com"
-		android:inputType="text" />
+		android:layout_height="match_parent"
+		app:cardCornerRadius="@dimen/card_corner_radius"
+		app:cardElevation="@dimen/card_elevation">
 
-	<Button
-		android:id="@+id/rule_add"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="12dp"
-		android:text="Tambah"
-		android:textAllCaps="false" />
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:padding="@dimen/panel_padding">
 
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="24dp"
-		android:text="Daftar aturan (tekan lama untuk hapus)"
-		android:textColor="@color/text_secondary"
-		android:textSize="14sp" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Aturan Akses"
+				android:textSize="24sp"
+				android:textStyle="bold"
+				android:textColor="@color/blue_primary" />
 
-	<ListView
-		android:id="@+id/rule_list"
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:layout_weight="1"
-		android:layout_marginTop="12dp" />
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:text="Tambah aturan host yang diizinkan"
+				android:textColor="@color/text_secondary"
+				android:textSize="14sp" />
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="12dp"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/rule_input"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/rules_input_hint"
+					android:inputType="text" />
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<Button
+				android:id="@+id/rule_add"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="12dp"
+				android:text="Tambah"
+				android:textAllCaps="false" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="24dp"
+				android:text="Daftar aturan (tekan lama untuk hapus)"
+				android:textColor="@color/text_secondary"
+				android:textSize="14sp" />
+
+			<ListView
+				android:id="@+id/rule_list"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="1"
+				android:layout_marginTop="12dp" />
+		</LinearLayout>
+	</com.google.android.material.card.MaterialCardView>
 </LinearLayout>

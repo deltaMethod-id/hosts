@@ -70,7 +70,6 @@ public class MainActivity extends BaseActivity {
 		server = new localServer(port, title, new localServer.Listener() {
 			@Override
 			public void onStarted(int startedPort) {
-				ServerInstance.setServer(server);
 				runOnUiThread(() -> {
 					statusText.setText(getString(R.string.server_running));
 					addressText.setText("http://" + getLocalIpAddress() + ":" + startedPort);
@@ -81,13 +80,13 @@ public class MainActivity extends BaseActivity {
 			@Override
 			public void onError(Exception error) {
 				runOnUiThread(() -> {
-					server = null;
 					statusText.setText(getString(R.string.toast_server_failed));
 					addressText.setText(error.getMessage());
 					serverButton.setText(getString(R.string.server_start));
 				});
 			}
 		});
+		ServerInstance.setServer(server);
 		server.start();
 	}
 

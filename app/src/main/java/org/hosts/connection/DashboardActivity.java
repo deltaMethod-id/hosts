@@ -19,6 +19,7 @@ public class DashboardActivity extends BaseActivity {
 	private TextView portText;
 	private TextView titleText;
 	private Button startStopButton;
+	private localServer server;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class DashboardActivity extends BaseActivity {
 		portText.setText(String.valueOf(prefs.getPort()));
 		titleText.setText(prefs.getTitle());
 
-		localServer server = ServerInstance.getServer();
+		server = ServerInstance.getServer();
 		updateStatus(server);
 
 		startStopButton.setOnClickListener(v -> {
@@ -65,11 +66,11 @@ public class DashboardActivity extends BaseActivity {
 		return getString(R.string.drawer_dashboard);
 	}
 
-	private void updateStatus(localServer server) {
-		if (server != null && server.isRunning()) {
+	private void updateStatus(localServer srv) {
+		if (srv != null && srv.isRunning()) {
 			statusText.setText(getString(R.string.dashboard_status_running));
 			startStopButton.setText(getString(R.string.dashboard_stop));
-			addressText.setText("http://" + getLocalIpAddress() + ":" + server.getPort());
+			addressText.setText("http://" + getLocalIpAddress() + ":" + srv.getPort());
 		} else {
 			statusText.setText(getString(R.string.dashboard_status_stopped));
 			startStopButton.setText(getString(R.string.dashboard_start));
@@ -81,44 +82,46 @@ public class DashboardActivity extends BaseActivity {
 		PreferencesManager prefs = new PreferencesManager(this);
 		int port = prefs.getPort();
 		String title = prefs.getTitle();
-		localServer server = new localServer(port, title, new localServer.Listener() {
+		server = new localServer(port, title, new localServer.Listener() {
 			@Override
-			public void onStarted(int startedPort) {
-				ServerInstance.setServer(server);
+			public void onStarted(final int startedPort) {
 				runOnUiThread(() -> {
 					portText.setText(String.valueOf(startedPort));
-					updateStatus(server);
+					updateStatus(DashboardActivity.this.server);
 				});
 			}
 
 			@Override
 			public void onError(Exception error) {
 				runOnUiThread(() -> {
+					DashboardActivity.this.server = null;
 					Toast.makeText(DashboardActivity.this, getString(R.string.toast_server_failed) + ": " + error.getMessage(), Toast.LENGTH_SHORT).show();
 					updateStatus(null);
 				});
 			}
 		});
+		ServerInstance.setServer(server);
 		server.start();
 	}
 
 	private void stopServer() {
-		localServer server = ServerInstance.getServer();
+		server = ServerInstance.getServer();
 		if (server != null) {
 			server.stop();
 			ServerInstance.setServer(null);
+			server = null;
 		}
 		updateStatus(null);
 	}
 
 	private String getLocalIpAddress() {
 		try {
-			java.util.Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+			Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
 			while (interfaces.hasMoreElements()) {
-				java.util.Enumeration<java.net.InetAddress> addresses = interfaces.nextElement().getInetAddresses();
+				Enumeration<InetAddress> addresses = interfaces.nextElement().getInetAddresses();
 				while (addresses.hasMoreElements()) {
-					java.net.InetAddress address = addresses.nextElement();
-					if (!address.isLoopbackAddress() && address instanceof java.net.Inet4Address) {
+					InetAddress address = addresses.nextElement();
+					if (!address.isLoopbackAddress() && address instanceof Inet4Address) {
 						return address.getHostAddress();
 					}
 				}
